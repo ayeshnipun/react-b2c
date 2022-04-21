@@ -13,10 +13,14 @@ function App() {
             switch (authenticationState) {
               case AuthenticationState.Authenticated:
                 return (
-                  <p>
-                    <span>Welcome, {accountInfo.account.name}!</span>
+                  <div>
+                    <span>Welcome, {accountInfo.account.name}!</span> <br/>
                     <button onClick={logout}>Logout</button>
-                  </p>
+                  </div>
+                );
+              case AuthenticationState.Unauthenticated:
+                return (
+                    <button onClick={login}>Login</button>
                 );
               default:
             }
