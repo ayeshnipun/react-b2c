@@ -1,8 +1,8 @@
 import { MsalAuthProvider, LoginType } from "react-aad-msal";
-const tenant = "azuranianstribe.onmicrosoft.com";
-const signInPolicy = "B2C_1_User_sign_in";
-const applicationID = "0ff2617a-a4c1-4b69-8e97-473ed13f7bae";
-const reactRedirectUri = "http://localhost:3000";
+const tenant = process.env.REACT_APP_B2C_TENANT;
+const signInPolicy = process.env.REACT_APP_B2C_SIGNIN_POLICY;
+const applicationID = process.env.REACT_APP_B2C_CLIENT_ID;
+const reactRedirectUri = process.env.REACT_APP_B2C_REDIRECT_URL;
 const tenantSubdomain = tenant.split(".")[0];
 const instance = `https://${tenantSubdomain}.b2clogin.com/tfp/`;
 const signInAuthority = `${instance}${tenant}/${signInPolicy}`;
